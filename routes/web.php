@@ -25,6 +25,7 @@ require __DIR__.'/auth.php'; -->
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +44,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/save-token', [App\Http\Controllers\HomeController::class, 'saveToken'])->name('save-token');
-Route::post('/send-notification', [App\Http\Controllers\HomeController::class, 'sendNotification'])->name('send.notification');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/save-token', [HomeController::class, 'saveToken'])->name('save-token');
+Route::post('/send-notification', [HomeController::class, 'sendNotification'])->name('send.notification');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
